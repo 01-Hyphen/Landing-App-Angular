@@ -1,0 +1,25 @@
+<ul class="pagination">
+  <li
+    class="page-item"
+    [ngClass]="currentPage === 1 ? 'disabled' : ''"
+    (click)="onPrev()"
+  >
+    <a class="page-link">Previous</a>
+  </li>
+  <li
+    class="page-item"
+    *ngFor="let page of pages"
+    [ngClass]="page === currentPage ? 'active' : ''"
+  >
+    <a class="page-link" (click)="showNext(page)">{{ page }}</a>
+  </li>
+
+  <li class="page-item">
+    <a
+      class="page-link"
+      [ngClass]="currentPage === totalPages ? 'disabled' : ''"
+      (click)="onNext()"
+      >Next</a
+    >
+  </li>
+</ul>

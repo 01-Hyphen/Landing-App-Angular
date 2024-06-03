@@ -1,0 +1,19 @@
+<h3 style="text-align:  center;">{{ category | titlecase }} News</h3>
+<div class="list-group">
+  <a style="color: rgb(103, 103, 239); font-weight: bolder;"
+    class="list-group-item my"
+    *ngFor="let article of articles"
+    [href]="article.url"
+    target="_blank"
+  >
+    {{ article.title | trimOutletName }}
+  </a>
+</div>
+<div class="foot">
+<app-paginator
+  [totalPages]="totalPages"
+  (sendCurrentPageNumber)="currentPage($event)"
+></app-paginator>
+<app-drop-down (sendCategory)="getCategory($event)"></app-drop-down>
+</div>
+

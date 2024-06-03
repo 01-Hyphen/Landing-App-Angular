@@ -1,0 +1,15 @@
+:host {
+  position: absolute;
+  top: 30px;
+}
+
+.my:hover{
+    text-decoration: underline;
+}
+
+.foot {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  gap: 5px;
+}
